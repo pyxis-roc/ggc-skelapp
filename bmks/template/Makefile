@@ -1,9 +1,6 @@
 include ../common.mk
 
-# change this to suit your benchmark
-BMKNAME=template
-SRCPY=$(BMKNAME).py
-SUPPORT=$(BMKNAME)_support.cu
+include app.mk
 
 # do not change anything below unless you know what you're doing
 DSTDIR=$(GENSRC)/$(BMKNAME)

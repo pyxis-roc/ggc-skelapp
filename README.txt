@@ -11,33 +11,17 @@ merely convenient.
 
 ## Installation
 
-This assumes you have cloned this repository to `$GGCBMK`
+Run `./skelsetup.py setup $GGC` to setup the template directory.
 
-Set the soft links `rt` and `skelapp` to point to the correct
-locations.
-
-```
-  ln -sf $GGC/rt rt
-  ln -sf $GGC/skelapp skelapp
-```
-
-Edit the file `$GGCBMK/bmks/common.mk` and set the `GGCDIR` variable
-to point to $GGC (where you installed GGC).
-
+This will create softlinks to `$GGC/rt` and `$GGC/skelapp` in the
+template directory and also setup variables in `bmks/local.mk` to
+point to `$GGC`.
+   
 ## Create a benchmark directory from the template
 
 Let's suppose the benchmark name is `cc`.
 
-Copy the template directory.
-
-```
-   cd $GGCBMK/bmks
-   cp -a template cc
-   mv cc/template_support.cu cc/cc_support.cu
-```
-
-Now, edit the `Makefile` in `cc/Makefile` to set your benchmark name
-and other parameters.
+Run `./skelsetup.py create cc` to create a new directory `bmks/cc`.
 
 ## Create your code
 
@@ -54,14 +38,10 @@ Add your IrGL code to `cc.py`.
 ## Compile your code
 
 Run `make` in the `cc` directory. If everything went well, you should
-have see generated code in `$GGCBMK/gensrc/cc`, with the following files:
+have see generated code in `../gensrc/cc`, with the following files:
 
   1. A `kernel.cu` file (the compiled `cc.py`)
   2. A `support.cu` file (a soft-linked `cc_support.cu`)
   3. A `Makefile` to compile this using CUDA
 
 Run `make` in this directory to get `test`, a binary that can be run.
-
-
-
-	
