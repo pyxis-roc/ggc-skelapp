@@ -11,7 +11,7 @@ merely convenient.
 
 ## Installation
 
-Run `./skelsetup.py setup $GGC` to setup the template directory.
+Run `./skelsetup.py setup $GGC` to setup the template directory, where `$GGC` is the root directory containing the ggc IrGL compiler.
 
 This will create softlinks to `$GGC/rt` and `$GGC/skelapp` in the
 template directory and also setup variables in `bmks/local.mk` to
