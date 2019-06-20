@@ -16,7 +16,7 @@ $(DSTDIR)/kernel.cu: $(SRCPY)
 	$(GGC) $(GGCFLAGS) -o $@ $<
 
 $(DSTDIR)/support.cu: 
-	ln -sf ../../bmks/$(BMKNAME)/$(SUPPORT).cu $@ 
+	ln -sf ../../bmks/$(BMKNAME)/$(SUPPORT) $@ 
 
 include ../common-rules.mk
 
